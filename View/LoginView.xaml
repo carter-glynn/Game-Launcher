@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GameLauncher.View"
+        xmlns:validaterules="clr-namespace:GameLauncher.ValidateRules" 
         mc:Ignorable="d"
         Title="LoginView" Height="550" Width="800"
         WindowStyle="None"
@@ -12,6 +12,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
+    
     <Border CornerRadius="12">
 
         <Border.Background>
@@ -44,8 +45,7 @@
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="50"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
@@ -56,47 +56,15 @@
                                Grid.Column="0"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"/>
-                    <Button x:Name="btnMinimize"                           
-                            BorderThickness="0"
-                            Content="-"
-                            Foreground="White"
-                            FontSize="16"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Grid.Column="1"
-                            Click="btnMinimize_Click">
-
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#28AEED"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#278BEF"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
 
                     <Button x:Name="btnClose"                          
                             BorderThickness="0"
-                            Content="X"
+                            Content="Exit"
                             Foreground="White"
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Grid.Column="2"
+                            Grid.Column="1"
                             Click="btnClose_Click">
 
                         <Button.Style>
@@ -112,7 +80,7 @@
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
+                                <Border Width="40" Height="18"
                                         CornerRadius="9"
                                         Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
@@ -123,7 +91,7 @@
 
                     </Button>
                 </Grid>
-
+                
                 <StackPanel Width="220"
                             Grid.Row="1"
                             Orientation="Vertical"
@@ -155,7 +123,7 @@
                                FontFamily="Montserrat"                             
                                Margin="0,35,0,0"/>
 
-                    <TextBox x:Name="txtUser"
+                    <TextBox x:Name="tbxUsername"  
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
@@ -166,7 +134,9 @@
                              Height="28"
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="20,0,0,0">
+                             Padding="20,0,0,0"
+                             TextChanged="textChangedEventHandler"
+                             ToolTip="Username contains only letters and numbers. No spaces or special characters.">
 
                         <TextBox.Background>
                             <ImageBrush ImageSource="/Images/user-icon.png"
@@ -174,6 +144,23 @@
                                         AlignmentX="Left"/>
                         </TextBox.Background>
 
+                        <TextBox.Text>
+                            <Binding Path="UsernameInput" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <validaterules:UsernameValidationRule/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=tbxUsername, Path=(Validation.HasError)}" Value="true">
+                                        <Setter Property="ToolTip" Value="Username is invalid."></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
                     </TextBox>
 
                     <TextBlock Text="Password"
@@ -183,7 +170,8 @@
                                FontFamily="Montserrat"                             
                                Margin="0,15,0,0"/>
 
-                    <PasswordBox x:Name="txtPass"
+
+                    <TextBox x:Name="tbxPassword"    
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
@@ -194,19 +182,28 @@
                              Height="28"
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="20,0,0,0">
+                             Padding="20,0,0,0"
+                             TextChanged="textChangedEventHandler">
 
-                        <PasswordBox.Background>
+                        <TextBox.Background>
                             <ImageBrush ImageSource="/Images/key-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
-                        </PasswordBox.Background>
+                        </TextBox.Background>
 
-                    </PasswordBox>
+                        <TextBox.Text>
+                            <Binding Path="PasswordInput" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <validaterules:PasswordValidationRule/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
                     <Grid Width="220" Margin="0, 5, 0 ,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="45"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
@@ -234,6 +231,14 @@
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter Property="Background" Value="#28AEED"/>
                                             </Trigger>
+                                            <DataTrigger Binding="{Binding ElementName=tbxPassword,Path=(Validation.HasError)}" Value="true">
+                                                <Setter Property="IsEnabled" Value="False"></Setter>
+                                                <Setter Property="Background" Value="DarkGray"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=tbxUsername,Path=(Validation.HasError)}" Value="true">
+                                                <Setter Property="IsEnabled" Value="False"></Setter>
+                                                <Setter Property="Background" Value="DarkGray"></Setter>
+                                            </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </Button.Style>
@@ -262,7 +267,7 @@
 
                                 <Button.Style>
                                     <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#DA34AE"/>
+                                        <Setter Property="Background" Value="#DD14AE"/>
                                         <Style.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter Property="Background" Value="#28AEED"/>
@@ -282,31 +287,52 @@
                                 </Button.Template>
                             </Button>
                         </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button BorderThickness="0"
+                                Content="GUEST LOGIN"
+                                Grid.Column="1"
+                                Foreground="Black"
+                                FontSize="12"
+                                FontFamily="Montserrat"
+                                Cursor="Hand" 
+                                Click="btnGuest_Click">
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#F4ff3d"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="210" Height="35"
+                                        CornerRadius="12"
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
                     </Grid>
 
-
-
-                    <StackPanel Width="220"
-                                Orientation="Horizontal"
-                                HorizontalAlignment="Center"
-                                Margin="0,5,0,0">
-
-                        <TextBlock Text="Forgot Password?"
+                    <CheckBox      x:Name="CheckBoxRemember"
                                    Foreground="DarkGray"
                                    FontSize="12"
                                    FontWeight="Medium"
                                    FontFamily="Montserrat"
-                                   Margin="5,0,0,0"/>
-
-                        <TextBlock Text="Click here"
-                               Foreground="White"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               Cursor="Hand"
-                               Margin="8,0,0,0"/>
-
-                    </StackPanel>
+                                   VerticalAlignment="Center"
+                                   Margin="0,5,0,0">
+                                   Remember me
+                    </CheckBox>  
 
                 </StackPanel>
             </Grid>
