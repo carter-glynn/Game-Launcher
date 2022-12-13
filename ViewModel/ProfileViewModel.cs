@@ -60,17 +60,6 @@ namespace GameLauncher.ViewModel {
             }
         }
 
-        private ImageSource _ProfilePic;
-        public ImageSource ProfilePic {
-            get {
-                return _ProfilePic;
-            }
-            set {
-                _ProfilePic = value;
-                OnPropertyChanged(nameof(ProfilePic));
-            }
-        }
-
         public ProfileViewModel(string tFirstName, string tLastname, string tUsername, string tEmail, string tPassword) {
             FirstName = tFirstName;
             LastName = tLastname;

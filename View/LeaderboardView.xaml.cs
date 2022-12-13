@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,39 +23,20 @@ namespace GameLauncher.View {
             InitializeComponent();
 
             List<Scores> items = new List<Scores>();
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100"});
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
 
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
+            // Get scores from Database.
+            string sSQL = "SELECT * FROM Scores";
+            DataTable tbl = UserInfoDb.Get_DataTable(sSQL);
 
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
-            items.Add(new Scores() { Username = "TestUser", Game = "TestGame", Score = "100" });
+            // Verify user exists.
+            foreach(DataRow row in tbl.Rows) {
+                string Username = string.Join("", row[1].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+                string Game = string.Join("", row[2].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries)); // Database pads columns with spaces to fill char count. Not fixing cause i dont care.
+                string score = string.Join("", row[3].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+
+                items.Add(new Scores() { Username = Username, Game = Game, Score = score });
+            }
+            
             lbScores.ItemsSource = items;
         }
 

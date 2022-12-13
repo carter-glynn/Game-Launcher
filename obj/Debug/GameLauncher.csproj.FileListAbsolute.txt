@@ -11,7 +11,6 @@ C:\Darmor\School\User Interfaces\GameLauncher\bin\Debug\System.Threading.Tasks.E
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher.csproj.AssemblyReference.cache
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher.csproj.SuggestedBindingRedirects.cache
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\SignUpView.baml
-C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\MainWindow.g.cs
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\LoginView.g.cs
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\MainLauncher.g.cs
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\SignUpView.g.cs
@@ -19,7 +18,6 @@ C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\App.g.cs
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher_MarkupCompile.cache
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher_MarkupCompile.lref
-C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\MainWindow.baml
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\LoginView.baml
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\MainLauncher.baml
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher.g.resources
@@ -32,3 +30,11 @@ C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher.pdb
 C:\Darmor\School\User Interfaces\GameLauncher\bin\Debug\Database1.mdf
 C:\Darmor\School\User Interfaces\GameLauncher\bin\Debug\Database1_log.ldf
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\GameLauncher_Content.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\GamesView.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\LeaderboardView.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\ProfileView.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\GamesView.baml
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\LeaderboardView.baml
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\ProfileView.baml
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\Tetris\MainWindow.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\Tetris\MainWindow.baml

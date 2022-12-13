@@ -125,8 +125,8 @@ namespace GameLauncher.View {
             txtPass.Text = tempPassword;
 
             // Hide Cancel button, Show Edit button.
-            btnEdit.Visibility = Visibility.Hidden;
-            btnCancel.Visibility = Visibility.Visible;
+            btnEdit.Visibility = Visibility.Visible;
+            btnCancel.Visibility = Visibility.Hidden;
         }
     }
 }

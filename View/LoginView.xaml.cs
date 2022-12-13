@@ -31,8 +31,8 @@ namespace GameLauncher.View {
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             // Gets RememberMe Info
-            if(File.Exists(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "/RememberMe.txt")) {
-                string rememberMe = File.ReadAllText(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "/RememberMe.txt");
+            if(File.Exists(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/RememberMe.txt")) {
+                string rememberMe = File.ReadAllText(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/RememberMe.txt");
                 // Sql to run
                 string sSQL = "SELECT * FROM UserInfo WHERE Id=" + rememberMe;
                 DataTable tbl = UserInfoDb.Get_DataTable(sSQL);
