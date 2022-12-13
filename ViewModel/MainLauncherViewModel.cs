@@ -40,15 +40,15 @@ namespace GameLauncher.ViewModel {
             ShowProfileViewCommand = new ViewModelCommand(ExecuteShowProfileViewCommand);
             ShowLeaderboardViewCommand = new ViewModelCommand(ExecuteShowLeaderboardViewCommand);
 
-            // Default view
-            ExecuteShowGamesViewCommand(null);
-
             CurrentUser.FirstName = tFirstName;
             CurrentUser.LastName = tLastname;
             CurrentUser.Username = tUsername;
             CurrentUser.Email = tEmail;
             CurrentUser.Password = tPassword;
-            
+
+            // Default view
+            currentChildViewModel = new GamesViewModel(CurrentUser.Username);
+
         }
 
         private void ExecuteShowLeaderboardViewCommand(object obj) {
@@ -60,7 +60,7 @@ namespace GameLauncher.ViewModel {
         }
 
         private void ExecuteShowGamesViewCommand(object obj) {
-            currentChildViewModel = new GamesViewModel();
+            currentChildViewModel = new GamesViewModel(CurrentUser.Username);
             
         }
     }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tetris;
 
 namespace GameLauncher.View {
     /// <summary>
@@ -20,6 +21,11 @@ namespace GameLauncher.View {
     public partial class GamesView : UserControl {
         public GamesView() {
             InitializeComponent();
+        }
+
+        private void btnTetris_Click(object sender, RoutedEventArgs e) {
+            MainWindow test = new MainWindow(tbxUsername.Text);
+            test.Show();
         }
     }
 }

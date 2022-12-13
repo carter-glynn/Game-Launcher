@@ -88,6 +88,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Games\Tetris\Block.cs" />
+    <Compile Include="Games\Tetris\BlockQueue.cs" />
+    <Compile Include="Games\Tetris\GameGrid.cs" />
+    <Compile Include="Games\Tetris\GameState.cs" />
+    <Compile Include="Games\Tetris\IBlock.cs" />
+    <Compile Include="Games\Tetris\JBlock.cs" />
+    <Compile Include="Games\Tetris\LBlock.cs" />
+    <Compile Include="Games\Tetris\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games\Tetris\OBlock.cs" />
+    <Compile Include="Games\Tetris\Position.cs" />
+    <Compile Include="Games\Tetris\SBlock.cs" />
+    <Compile Include="Games\Tetris\TBlock.cs" />
+    <Compile Include="Games\Tetris\ZBlock.cs" />
     <Compile Include="UserInfoDb.cs" />
     <Compile Include="ValidateRules\EmailValidationRule.cs" />
     <Compile Include="ValidateRules\NameValidationRule.cs" />
@@ -122,6 +137,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Games\Tetris\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\GamesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,6 +223,25 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Games\Tetris\Assets\back-image.jpg" />
+    <Resource Include="Games\Tetris\Assets\Block-Empty.png" />
+    <Resource Include="Games\Tetris\Assets\Block-I.png" />
+    <Resource Include="Games\Tetris\Assets\Block-J.png" />
+    <Resource Include="Games\Tetris\Assets\Block-L.png" />
+    <Resource Include="Games\Tetris\Assets\Block-O.png" />
+    <Resource Include="Games\Tetris\Assets\Block-S.png" />
+    <Resource Include="Games\Tetris\Assets\Block-T.png" />
+    <Resource Include="Games\Tetris\Assets\Block-Z.png" />
+    <Resource Include="Games\Tetris\Assets\Icon.ico" />
+    <Resource Include="Games\Tetris\Assets\The_Tetris_Company_logo.png" />
+    <Resource Include="Games\Tetris\Assets\TileBlue.png" />
+    <Resource Include="Games\Tetris\Assets\TileCyan.png" />
+    <Resource Include="Games\Tetris\Assets\TileEmpty.png" />
+    <Resource Include="Games\Tetris\Assets\TileGreen.png" />
+    <Resource Include="Games\Tetris\Assets\TileOrange.png" />
+    <Resource Include="Games\Tetris\Assets\TilePurple.png" />
+    <Resource Include="Games\Tetris\Assets\TileRed.png" />
+    <Resource Include="Games\Tetris\Assets\TileYellow.png" />
     <Resource Include="Images\Tetris.jpg" />
     <Resource Include="Images\TicTacToe.jpg" />
     <Resource Include="Images\Snake.jpg" />
