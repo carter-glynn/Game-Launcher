@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Tetris;
+using Snake_Game;
+using Tic_Tac_Toe_Game;
 
 namespace GameLauncher.View {
     /// <summary>
@@ -24,7 +26,17 @@ namespace GameLauncher.View {
         }
 
         private void btnTetris_Click(object sender, RoutedEventArgs e) {
-            MainWindow test = new MainWindow(tbxUsername.Text);
+            Tetris.MainWindow test = new Tetris.MainWindow(tbxUsername.Text);
+            test.Show();
+        }
+
+        private void btnTicTacToe_Click(object sender, RoutedEventArgs e) {
+            Tic_Tac_Toe_Game.MainWindow test = new Tic_Tac_Toe_Game.MainWindow(tbxUsername.Text);
+            test.Show();
+        }
+
+        private void btnSnake_Click(object sender, RoutedEventArgs e) {
+            Snake_Game.MainWindow test = new Snake_Game.MainWindow(tbxUsername.Text);
             test.Show();
         }
     }

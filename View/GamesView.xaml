@@ -56,13 +56,17 @@
                         </Style>
                     </UniformGrid.Resources>
                     <Border>
-                        <Button Background="Transparent">
+                        <Button x:Name='btnSnake'
+                                Background="Transparent"
+                                Click="btnSnake_Click">
                             <Image Source="/Images/Snake.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" Width="348" />
                         </Button>
                     </Border>
 
                     <Border>
-                        <Button Background="Transparent">
+                        <Button x:Name='btnTicTacToe'
+                                Background="Transparent"
+                                Click="btnTicTacToe_Click">
                             <Image Source="/Images/TicTacToe.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" Width="582" />
                         </Button>
                     </Border>

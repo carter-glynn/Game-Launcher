@@ -56,6 +56,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <HintPath>packages\ServiceStack.Interfaces.6.4.0\lib\net472\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
@@ -88,6 +91,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Games\Snake\Direction.cs" />
+    <Compile Include="Games\Snake\GameState.cs" />
+    <Compile Include="Games\Snake\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games\Snake\Position.cs" />
+    <Compile Include="Games\Snake\SnakeImages.cs" />
+    <Compile Include="Games\Snake\TileValue.cs" />
     <Compile Include="Games\Tetris\Block.cs" />
     <Compile Include="Games\Tetris\BlockQueue.cs" />
     <Compile Include="Games\Tetris\GameGrid.cs" />
@@ -103,6 +114,14 @@
     <Compile Include="Games\Tetris\SBlock.cs" />
     <Compile Include="Games\Tetris\TBlock.cs" />
     <Compile Include="Games\Tetris\ZBlock.cs" />
+    <Compile Include="Games\TicTacToe\GameState.cs" />
+    <Compile Include="Games\TicTacToe\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games\TicTacToe\Player.cs" />
+    <Compile Include="Games\TicTacToe\Result.cs" />
+    <Compile Include="Games\TicTacToe\WinInformation.cs" />
+    <Compile Include="Games\TicTacToe\WinType.cs" />
     <Compile Include="UserInfoDb.cs" />
     <Compile Include="ValidateRules\EmailValidationRule.cs" />
     <Compile Include="ValidateRules\NameValidationRule.cs" />
@@ -137,7 +156,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Games\Snake\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Games\Tetris\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Games\TicTacToe\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -223,6 +250,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Games\Snake\Assets\Body.png" />
+    <Resource Include="Games\Snake\Assets\DeadBody.png" />
+    <Resource Include="Games\Snake\Assets\DeadHead.png" />
+    <Resource Include="Games\Snake\Assets\Empty.png" />
+    <Resource Include="Games\Snake\Assets\Food.png" />
+    <Resource Include="Games\Snake\Assets\Head.png" />
+    <Resource Include="Games\Snake\Assets\icon.ico" />
+    <Resource Include="Games\TicTacToe\Assets\back-image.jpg" />
+    <Resource Include="Games\TicTacToe\Assets\Grid.png" />
+    <Resource Include="Games\TicTacToe\Assets\Icon.ico" />
+    <Resource Include="Games\TicTacToe\Assets\O15.png" />
+    <Resource Include="Games\TicTacToe\Assets\X15.png" />
     <Resource Include="Games\Tetris\Assets\back-image.jpg" />
     <Resource Include="Games\Tetris\Assets\Block-Empty.png" />
     <Resource Include="Games\Tetris\Assets\Block-I.png" />

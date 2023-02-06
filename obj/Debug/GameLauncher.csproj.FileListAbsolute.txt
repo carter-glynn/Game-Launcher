@@ -38,3 +38,9 @@ C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\LeaderboardView.bam
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\View\ProfileView.baml
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\Tetris\MainWindow.g.cs
 C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\Tetris\MainWindow.baml
+C:\Darmor\School\User Interfaces\GameLauncher\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Darmor\School\User Interfaces\GameLauncher\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\Snake\MainWindow.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\TicTacToe\MainWindow.g.cs
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\Snake\MainWindow.baml
+C:\Darmor\School\User Interfaces\GameLauncher\obj\Debug\Games\TicTacToe\MainWindow.baml
