@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Darmor\School\User Interfaces\GameLauncher\App.xaml
-71207981245
+9-1931635899
 21200697616
-3630412714
-202108636565
-Games\Tetris\MainWindow.xaml;View\GamesView.xaml;View\LeaderboardView.xaml;View\LoginView.xaml;View\MainLauncher.xaml;View\ProfileView.xaml;View\SignUpView.xaml;
+481005056155
+21-12209963
+Games\Snake\MainWindow.xaml;Games\Tetris\MainWindow.xaml;Games\TicTacToe\MainWindow.xaml;View\GamesView.xaml;View\LeaderboardView.xaml;View\LoginView.xaml;View\MainLauncher.xaml;View\ProfileView.xaml;View\SignUpView.xaml;
 
-False
+True
 

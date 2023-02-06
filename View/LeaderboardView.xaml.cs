@@ -36,8 +36,10 @@ namespace GameLauncher.View {
 
                 items.Add(new Scores() { Username = Username, Game = Game, Score = score });
             }
-            
-            lbScores.ItemsSource = items;
+
+            List<Scores> SortedList = items.OrderByDescending(o => o.Score).ToList();
+
+            lbScores.ItemsSource = SortedList;
         }
 
         public class Scores {
