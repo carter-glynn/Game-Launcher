@@ -38,7 +38,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#demo-pictures">Demo Pictures</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -60,10 +60,25 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Demo Pictures
 
+<img src="images/SignUp.jpg" alt="Logo" width="450" height="300">
+<p>Sign Up Page</p><br>
 
+<img src="images/LogIn.jpg" alt="Logo" width="450" height="300">
+<p>Log In Page</p><br>
 
+<img src="images/ProfileView.jpg" alt="Logo" width="450" height="300">
+<p>Profile Viewer</p><br>
+
+<img src="images/ProfileEdit.jpg" alt="Logo" width="450" height="300">
+<p>Profile Editor</p><br>
+
+<img src="images/Games.jpg" alt="Logo" width="450" height="300">
+<p>Games</p><br>
+
+<img src="images/Leaderboard.jpg" alt="Logo" width="450" height="300">
+<p>Leaderboard</p><br>
 
 ### Built With
 
